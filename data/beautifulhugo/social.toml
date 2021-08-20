@@ -53,6 +53,12 @@ title = "Reddit"
 icon = "fab fa-reddit-alien"
 
 [[social_icons]]
+id = "subreddit"
+url = "https://reddit.com/r/%s"
+title = "Reddit"
+icon = "fab fa-reddit-alien"
+
+[[social_icons]]
 id = "linkedin"
 url = "https://linkedin.com/in/%s"
 title = "LinkedIn"
@@ -110,6 +116,7 @@ icon = "fab fa-bandcamp"
 id = "itchio"
 url = "https://itch.io/profile/%s"
 title = "Itch.io"
+#icon = "fas fa-gamepad"
 icon = "fab fa-itch-io"
 
 [[social_icons]]
