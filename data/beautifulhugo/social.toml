@@ -43,7 +43,7 @@ icon = "fab fa-slack"
 [[social_icons]]
 id = "discord"
 url = "https://discord.gg/%s"
-title = "Slack"
+title = "discord"
 icon = "fab fa-discord"
 
 [[social_icons]]
