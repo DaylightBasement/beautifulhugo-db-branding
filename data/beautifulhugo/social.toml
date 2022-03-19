@@ -126,6 +126,12 @@ title = "Steam"
 icon = "fab fa-steam"
 
 [[social_icons]]
+id = "press"
+url = "%s"
+title = "Press"
+icon = "fa fa-newspaper"
+
+[[social_icons]]
 id = "keybase"
 url = "https://keybase.io/%s"
 title = "Keybase"
