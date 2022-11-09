@@ -8,14 +8,20 @@
   {{ $.Scratch.Set "title" .Title }}
   {{ if .Params.subtitle }}{{ $.Scratch.Set "subtitle" .Params.subtitle }}{{ end }}
   {{ if .Params.bigimg }}{{ $.Scratch.Set "bigimg" .Params.bigimg }}{{ end }}
+  {{ if .Params.vid }}{{ $.Scratch.Set "vid" .Params.vid }}{{ end }}
 {{ end }}
 {{ $bigimg := $.Scratch.Get "bigimg" }}
 {{ $title := $.Scratch.Get "title" }}
 {{ $subtitle := $.Scratch.Get "subtitle" }}
+{{ $vid := $.Scratch.Get "vid" }}
 
-{{ if or $bigimg $title }}
-  {{ if $bigimg }}
-    <div id="header-big-imgs" data-num-img={{len $bigimg}} 
+{{ if or $bigimg $title $vid }}
+  {{ if $vid }}
+      <video class="header-big-imgs" width="100%" height="100%" src="{{ $vid }}" poster="/rba/logo4.png" loop autoplay muted>
+        Video not supported
+      </video>
+  {{ else if $bigimg }}
+    <div id="header-big-imgs" data-num-img={{len $bigimg}}
       {{range $i, $img := $bigimg}}
          {{ if (fileExists $img.src)}} 
           data-img-src-{{add $i 1}}="{{$img.src | absURL }}" 
