@@ -9,15 +9,17 @@
   {{ if .Params.subtitle }}{{ $.Scratch.Set "subtitle" .Params.subtitle }}{{ end }}
   {{ if .Params.bigimg }}{{ $.Scratch.Set "bigimg" .Params.bigimg }}{{ end }}
   {{ if .Params.vid }}{{ $.Scratch.Set "vid" .Params.vid }}{{ end }}
+  {{ if .Params.pic }}{{ $.Scratch.Set "pic" .Params.pic }}{{ end }}
 {{ end }}
 {{ $bigimg := $.Scratch.Get "bigimg" }}
 {{ $title := $.Scratch.Get "title" }}
 {{ $subtitle := $.Scratch.Get "subtitle" }}
 {{ $vid := $.Scratch.Get "vid" }}
+{{ $pic := $.Scratch.Get "pic" }}
 
 {{ if or $bigimg $title $vid }}
   {{ if $vid }}
-      <video class="header-big-imgs" width="100%" height="100%" src="{{ $vid }}" poster="/rba/logo4.png" loop autoplay muted>
+      <video class="header-big-imgs" width="100%" height="100%" src="{{ $vid }}" poster="{{ $pic }}" loop autoplay muted>
         Video not supported
       </video>
   {{ else if $bigimg }}
