@@ -10,18 +10,22 @@
   {{ if .Params.bigimg }}{{ $.Scratch.Set "bigimg" .Params.bigimg }}{{ end }}
   {{ if .Params.vid }}{{ $.Scratch.Set "vid" .Params.vid }}{{ end }}
   {{ if .Params.pic }}{{ $.Scratch.Set "pic" .Params.pic }}{{ end }}
+  {{ if .Params.link }}{{ $.Scratch.Set "link" .Params.link }}{{ end }}
 {{ end }}
 {{ $bigimg := $.Scratch.Get "bigimg" }}
 {{ $title := $.Scratch.Get "title" }}
 {{ $subtitle := $.Scratch.Get "subtitle" }}
 {{ $vid := $.Scratch.Get "vid" }}
 {{ $pic := $.Scratch.Get "pic" }}
+{{ $link := $.Scratch.Get "link" }}
 
 {{ if or $bigimg $title $vid }}
   {{ if $vid }}
-      <video class="header-big-imgs" width="100%" height="100%" src="{{ $vid }}" poster="{{ $pic }}" loop autoplay muted>
+      <a href="{{ $link }}">
+      <video id="header-big-imgs" width="100%" height="100%" src="{{ $vid }}" poster="{{ $pic }}" loop autoplay muted>
         Video not supported
       </video>
+      </a>
   {{ else if $bigimg }}
     <div id="header-big-imgs" data-num-img={{len $bigimg}}
       {{range $i, $img := $bigimg}}

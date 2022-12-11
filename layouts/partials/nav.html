@@ -1,3 +1,7 @@
+{{ if eq .Type "gamepage" }}
+<nav>
+</nav>
+{{ else }}
 <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -101,4 +105,5 @@
       </div>
     </div>
   </div>
+{{ end }}
 {{ end }}
